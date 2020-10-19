@@ -27,10 +27,10 @@ android {
     kotlinOptions.jvmTarget = javaVersion.toString()
     defaultConfig {
         applicationId = "com.github.shadowsocks.plugin.v2ray"
-        minSdkVersion(minSdk)
+        minSdkVersion(21)
         targetSdkVersion(29)
-        versionCode = 1030300
-        versionName = "1.3.3"
+        versionCode = 1030400
+        versionName = "1.3.4"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -49,6 +49,7 @@ android {
     sourceSets.getByName("main") {
         jniLibs.setSrcDirs(jniLibs.srcDirs + files("$projectDir/build/go"))
     }
+    android.ndkVersion = "21.3.6528147"
 }
 
 tasks.register<Exec>("goBuild") {
